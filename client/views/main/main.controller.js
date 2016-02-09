@@ -7,6 +7,7 @@ angular.module("appModule")
         var self = this;
 
         self.textField = "";
+        self.weightField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         self.data = [];
@@ -25,6 +26,7 @@ angular.module("appModule")
                     self.getPets();
                 });
                 self.textField = "";
+                self.weightField = "";
             }
         };
 
