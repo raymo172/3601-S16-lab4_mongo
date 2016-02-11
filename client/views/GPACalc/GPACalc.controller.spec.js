@@ -16,9 +16,13 @@ describe('Testing controller: GPACtrl', function(){
         });
     }));
 
+    it('dummy test should pass', function(){
+        expect(true).toEqual(true);
+    });
+
     it('GPACalculator', function(){
-        var data = [{course:'theClass', credit: 4, grade:"A"}]
-        scope.GPAControl.calculator(data).toEqual(4.0);
+        var data = [{course:'theClass', credit: 4, grade:"A"}];
+        scope.GPACtrl.calculator(data).toEqual(4.0);
     });
 
     it('GradeConversion', function(){

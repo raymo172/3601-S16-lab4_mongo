@@ -54,19 +54,19 @@ angular.module("appModule")
         };
 
         self.gradeConversion=function(grade){
-            if (grade == "A" ||grade == "a") {
+            if (grade == "A" || grade == "a") {
                 return 4;
             }
-            else if (grade == "B"||grade == "b") {
+            else if (grade == "B"|| grade == "b") {
                 return 3;
             }
-            else if (grade == "C"||grade == "c") {
+            else if (grade == "C"|| grade == "c") {
                 return 2;
             }
-            else if (grade == "D"||grade == "d") {
+            else if (grade == "D"|| grade == "d") {
                 return 1;
             }
-            else if (grade == "F"||grade == "f") {
+            else if (grade == "F"|| grade == "f") {
                 return 0;
             }
         };
@@ -76,13 +76,13 @@ angular.module("appModule")
         self.calculator = function(dataArray) {
             if (dataArray.length >= 1) {
                 var i;
-                var gpa;
-                var totalCredits;
+                var gpa = 0;
+                var totalCredits = 0;
                 for (i = 0; i < dataArray.length; i++) {
-                    gpa = self.gradeConversion(dataArray[i].grade) *parseInt(dataArray[i].credit);
-                    totalCredits += dataArray[i].credit;
+                    gpa += self.gradeConversion(dataArray[i].grade) *parseInt(dataArray[i].credit);
+                    totalCredits += parseInt(dataArray[i].credit);
                 }
-                return (gpa/totalCredits);
+                return (gpa/totalCredits).toFixed(2);
             }
             else {
                 return ""
