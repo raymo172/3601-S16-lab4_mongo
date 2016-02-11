@@ -1,25 +1,23 @@
 
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<img src="assets/images/puppies.jpg">
+<h1 class = "text-center">GPA Calculator</h1>
+<h2 class = "text-center">{{GPACalc.calculator(GPACalc.data)}}</h2>
 
 <hr>
 <div class="container">
     <ul class="list-group">
         <li class="list-group-item">
 
-            <form ng-submit="main.addData()">
-                <input ng-model="main.textField" type="text" size="50" placeholder="add a new item to the list!">
-                <input ng-model="main.weightField" type="text" size="50" placeholder="add weight!">
+            <form ng-submit="GPACalc.addData()">
+                <input ng-model="GPACalc.courseField" type="text" size="40" placeholder="Enter Course Name">
+                <input ng-model="GPACalc.creditField" type="text" size="25" placeholder="Enter Number of Credits">
+                <input ng-model="GPACalc.gradeField" type="text" size="25" placeholder="Enter Grade">
                 <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Items in this list: {{main.itemsInList()}}</span>
+                <span class="floatRight">Items in this list: {{GPACalc.itemsInList()}}</span>
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="test in main.data">Pet: {{test.text}}, Weight: {{test.weight}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="main.removeData($index)"></span></li>
-    </ul>
-    <ul class = "list-group">
-        <li class="list-group-item"> Largest Pet: {{main.fattestPet(main.data).text}}, Weight: {{main.fattestPet(main.data).weight}}</li>
+        <li class="list-group-item" ng-repeat="test in GPACalc.data">Course: {{test.course}}, Credit: {{test.credit}}, Grade: {{test.grade}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="GPACalc.removeData($index)"></span></li>
     </ul>
 </div>
 

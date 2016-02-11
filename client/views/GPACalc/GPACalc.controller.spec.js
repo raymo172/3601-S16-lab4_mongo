@@ -11,13 +11,18 @@ describe('Testing controller: GPACtrl', function(){
     // Initialize the controller and mock scope.
     beforeEach(inject(function($controller, $rootScope) {
         scope = $rootScope.$new();
-        GPACtrl = $controller('GPACtrl as mainControl', {
+        GPACtrl = $controller('GPACtrl as GPAControl', {
             $scope: scope
         });
     }));
 
-    it('dummy test should pass', function(){
-        expect(true).toEqual(true);
+    it('GPACalculator', function(){
+        var data = [{course:'theClass', credit: 4, grade:"A"}]
+        scope.GPAControl.calculator(data).toEqual(4.0);
+    });
+
+    it('GradeConversion', function(){
+        scope.GPAControl.gradeConversion('A').toEqual(4.0);
     });
 
 

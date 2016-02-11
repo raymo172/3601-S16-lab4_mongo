@@ -8,6 +8,7 @@ angular.module("appModule")
             .state('GPACalc', {
                 url: '/GPACalc',
                 templateUrl: 'views/GPACalc/GPACalc.html',
-                controller: 'GPACtrl'
+                controller: 'GPACtrl',
+                controllerAs: 'GPACalc'
             });
     });
