@@ -1,42 +1,24 @@
 'use strict';
 
 angular.module("appModule")
-    .controller('mainCtrl', function($http){
-        console.log("main controller loaded!");
+    .controller('GPACtrl', function($http){
+        console.log("GPA controller loaded!");
 
         var self = this;
-
+/*
         self.textField = "";
         self.weightField = "";
 
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         self.data = [];
 
-        self.maxData = [];
 
 
-        self.fattestPet = function(dataArray) {
-            if(dataArray.length ==0){
-                return {text:'No Pets', weight:'No Weights'}
-            }
-            else {
-                var maxWeight = 0;
-                var indexValue = 0;
-                var i;
-                for (i = 0; i < dataArray.length; i++) {
-                    if (dataArray[i].weight > maxWeight) {
-                        maxWeight = dataArray[i].weight;
-                        indexValue = i;
-                    }
-                }
-                return dataArray[indexValue];
-            }
-        };
+
 
         self.getPets = function(){
             $http.get('api/pets').success(function(pets) {
                 self.data = pets;
-                self.maxData = self.fattestPet(self.data);
             });
         };
 
@@ -68,5 +50,5 @@ angular.module("appModule")
         self.itemsInList = function(){
             return self.data.length;
         };
-
+*/
     });
