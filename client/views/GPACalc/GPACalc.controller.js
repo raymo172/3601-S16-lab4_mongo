@@ -69,6 +69,9 @@ angular.module("appModule")
             else if (grade == "F"|| grade == "f") {
                 return 0;
             }
+            else{
+                return "ERROR Enter a real grade."
+            }
         };
 
 
@@ -79,6 +82,9 @@ angular.module("appModule")
                 var gpa = 0;
                 var totalCredits = 0;
                 for (i = 0; i < dataArray.length; i++) {
+                    if(self.gradeConversion(dataArray[i].grade) == "ERROR Enter a real grade."){
+                        return self.gradeConversion(dataArray[i].grade);
+                    }
                     gpa += self.gradeConversion(dataArray[i].grade) *parseInt(dataArray[i].credit);
                     totalCredits += parseInt(dataArray[i].credit);
                 }
