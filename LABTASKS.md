@@ -22,11 +22,11 @@
 
 ##### Study the file api/pets/pets.controller.js, answer the following questions:
 -  What kind of documents would the database contain? What is the field in the model?
--- The database contains strings, the field is 'Pet'.
+> The database contains strings, the field is 'Pet'.
 -  What functions are defined in the controller? How do they change the database data?
---  Functions defined: Pet.find, Pet.Create, Pet.findByID, (index, create, destroy) they change the database by finding it, creating it , or detroying it (it being pet values).
+> Functions defined: Pet.find, Pet.Create, Pet.findByID, (index, create, destroy) they change the database by finding it, creating it , or detroying it (it being pet values).
 -  How does one get or delete elements in the database?
---  Use the destroy function
+>  Use the destroy function
 
 ##### What is the purpose of index.js in the api/pets? Where is it referenced?
 
