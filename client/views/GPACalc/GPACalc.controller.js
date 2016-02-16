@@ -13,10 +13,6 @@ angular.module("appModule")
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         self.data = [];
 
-
-
-
-
         self.getGrades = function(){
             $http.get('api/grades').success(function(grades) {
                 self.data = grades;
@@ -43,10 +39,6 @@ angular.module("appModule")
             $http.delete('/api/grades/' + self.data[index]._id).success(function(){
                 self.getGrades();
             });
-        };
-
-        self.cat = function(str1, str2){
-            return str1 + str2;
         };
 
         self.itemsInList = function(){
@@ -83,12 +75,12 @@ angular.module("appModule")
                 var totalCredits = 0;
                 for (i = 0; i < dataArray.length; i++) {
                     if(self.gradeConversion(dataArray[i].grade) == "ERROR Enter a real grade."){
-                        return self.gradeConversion(dataArray[i].grade);
+                        return "ERROR Enter a real grade and remove non-real grade.";
                     }
                     gpa += self.gradeConversion(dataArray[i].grade) *parseInt(dataArray[i].credit);
                     totalCredits += parseInt(dataArray[i].credit);
                 }
-                return parseInt((gpa/totalCredits).toFixed(2));
+                return (gpa/totalCredits).toFixed(2);
             }
             else {
                 return ""

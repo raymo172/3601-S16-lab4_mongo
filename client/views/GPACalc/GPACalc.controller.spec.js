@@ -20,14 +20,38 @@ describe('Testing controller: GPACtrl', function(){
         expect(true).toEqual(true);
     });
 
-    it('GPACalculator', function(){
-        var data = [{course:'theClass', credit: 4, grade:"A"}];
-        expect(scope.GPAControl.calculator(data)).toEqual(4.00);
-    });
-
     it('GradeConversion', function(){
         expect(scope.GPAControl.gradeConversion('A')).toEqual(4);
     });
+
+    it('GradeConversion', function(){
+        expect(scope.GPAControl.gradeConversion('B')).toEqual(3);
+    });
+
+    it('GradeConversion', function(){
+        expect(scope.GPAControl.gradeConversion('F')).toEqual(0);
+    });
+
+    it('GradeConversion', function(){
+        expect(scope.GPAControl.gradeConversion('sdhfkdjfle')).toEqual('ERROR Enter a real grade.');
+    });
+
+    it('GPACalculator', function(){
+        var data = [{course:'theClass', credit: 4, grade:"A"}];
+        expect(scope.GPAControl.calculator(data)).toEqual('4.00');
+    });
+
+    it('GPACalculator', function(){
+        var data = [{course:'theClass', credit: 4, grade:"G"}];
+        expect(scope.GPAControl.calculator(data)).toEqual('ERROR Enter a real grade and remove non-real grade.');
+    });
+
+    it('GPACalculator', function(){
+        var data = [{course:'theClass', credit: 4, grade:"A"},{course:'theClass', credit: 4, grade:"b"}];
+        expect(scope.GPAControl.calculator(data)).toEqual('3.50');
+    });
+
+
 
 
 });
