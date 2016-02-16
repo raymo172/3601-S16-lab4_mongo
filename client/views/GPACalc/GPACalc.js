@@ -1,6 +1,6 @@
 'use strict';
 
-console.log("main.js loaded!");
+console.log("GPACalc.js loaded!");
 
 angular.module("appModule")
     .config(function($stateProvider){

@@ -82,7 +82,7 @@ angular.module("appModule")
                     gpa += self.gradeConversion(dataArray[i].grade) *parseInt(dataArray[i].credit);
                     totalCredits += parseInt(dataArray[i].credit);
                 }
-                return (gpa/totalCredits).toFixed(2);
+                return parseInt((gpa/totalCredits).toFixed(2));
             }
             else {
                 return ""

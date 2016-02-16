@@ -4,7 +4,7 @@
 describe('Testing controller: GPACtrl', function(){
 
     // load the controller's module
-    beforeEach(module('appModule'));
+    beforeEach(module("appModule"));
 
     var GPACtrl, scope;
 
@@ -22,11 +22,11 @@ describe('Testing controller: GPACtrl', function(){
 
     it('GPACalculator', function(){
         var data = [{course:'theClass', credit: 4, grade:"A"}];
-        scope.GPACtrl.calculator(data).toEqual(4.0);
+        expect(scope.GPAControl.calculator(data)).toEqual(4.00);
     });
 
     it('GradeConversion', function(){
-        scope.GPAControl.gradeConversion('A').toEqual(4.0);
+        expect(scope.GPAControl.gradeConversion('A')).toEqual(4);
     });
 
 

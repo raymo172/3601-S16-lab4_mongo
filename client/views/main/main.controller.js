@@ -54,7 +54,6 @@ angular.module("appModule")
 
 
 
-
         self.removeData = function(index){
             $http.delete('/api/pets/' + self.data[index]._id).success(function(){
                 self.getPets();
