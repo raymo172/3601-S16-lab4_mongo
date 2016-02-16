@@ -30,7 +30,7 @@
 
 ##### What is the purpose of index.js in the api/pets? Where is it referenced?
 
--This page routes functions of the controller to a module.
+-This page routes functions of the controller to a module. It is referenced in the main controller.
 
 ##### What views are used in the project?
 
